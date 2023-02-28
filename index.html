@@ -1,22 +1,22 @@
 <!doctype html>
-    <html lang="en">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script src="./js/marked.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>A Markdown Previewer</title>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>freeCodeCamp - Markdown Challenge</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <script src="./Library/jS/marked.js"></script>
-        <script> //marked function
-            
-            function updatePreview() {
-                document.getElementById("preview").innerHTML = marked(document.getElementById("editor").value);
-            }
+    <script>
+      function updatePreview() {
+        let previewElement = document.getElementById("preview");
+        let editorValue = document.getElementById("editor").value;
+        let markedUpHTML = marked(editorValue);
+        previewElement.innerHTML = markedUpHTML;
+      }
 
-            // (H1 size), a sub header (H2 size), a link, inline code, 
-            // a code block, a list item, a blockquote, an image, and bolded text
-            function defaultText() {
-                let initialText = `# Hi
+      function setDefault() {
+      	
+        let defaultText = `# Hi
 
 ## This is my MarkDown project
 
@@ -49,45 +49,37 @@ I am a big fan of passing all the tests, thus I added the  carriage return!
 ![Edoras!](https://cdn-boial.nitrocdn.com/lrJSTMUhHaOSnJLNCZvsPgAAIjWcEmgs/assets/images/optimized/rev-ccefc8b/wp-content/uploads/2019/10/lord-of-the-rings-filimg-location_optimized.jpg)
 
                 `;
-                let editor = document.getElementById("editor");
-                let preview = document.getElementById("preview");
-                editor.value = initialText;
-                preview.innerHTML = marked(initialText, { breaks: true });
-                }
 
-        </script>
+        let editorField = document.getElementById("editor");
+        let previewElement = document.getElementById("preview");
+        editorField.value = defaultText;
+        previewElement.innerHTML = marked(defaultText)}
+    </script>
+  </head>
 
-    </head>
 
-    <body onload="defaultText()">
-        <div class="container-fluid">
-
-            <div class="row">
-                <div class="col text-center text-white bg-success">
-                    <h1>Markdown project</h1>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-6 bg-primary text-white d-flex flex-column">
-                    
-                    <h3 class="text-warning text-center">The editor</h3>
-                    <div class="form-group flex-grow-1 d-flex flex-column">
-                        <textarea id="editor" onkeyup="updatePreview()" class="form-control flex-grow-1"></textarea>
-                    </div>
-             
-                </div>
-                <div id="display" class="col-6 bg-secondary text-white">
-                    <h3 class="text-danger text-center">The display</h3>
-                    <h3 id="preview"></h3>
-                </div>
-            </div>
-            
+  <body onload="setDefault()" class="bg-primary">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col text-center text-white bg-primary my-3">
+          <h1>Markdown Previewer</h1>
         </div>
-        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
-        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-    </body>
+      </div>
+      <div class="row">
+        <div class="col-5 bg-primary d-flex flex-column">
+          <h2 class="text-white text-center my-3">Editor</h2>
+          <div class="form-group flex-grow-1 d-flex flex-column">
+            <textarea id="editor" onkeyup="updatePreview()" class="form-control flex-grow-1 bg-dark text-white"></textarea>
+          </div>
+        </div>
+        <div class="col-7 bg-primary">
+          <h2 class="text-white text-center my-3">Preview</h2>
+          <div class="bg-light p-3" id="preview"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Freecodecamp JavaScript -->
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
 </html>
