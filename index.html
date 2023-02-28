@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <title>Random Quote Generator</title>
+
+    <script>
+        window.onload = spaceMan
+            function spaceMan () {
+                getMeAQuoteMate();
+            }
+            function getMeAQuoteMate () {
+                let random = Math.floor(Math.random() * ancientQuotes.length);
+                
+                let toTweet = "viber://forward?text=";
+
+                let jiggy = ancientQuotes[random].quote.replace(/ /g, "%20");
+                let piggy = ancientQuotes[random].author.replace(/ /g, "%20");
+                toTweet += "%22" + jiggy + "%22%20" + piggy;
+
+                document.getElementById("tweet-quote").setAttribute("href", toTweet);
+                document.getElementById("text").innerText = ancientQuotes[random].quote;
+                document.getElementById("author").innerText = ancientQuotes[random].author;
+            }
+            const ancientQuotes = [
+  {
+    quote: "It is not that we have a short space of time, but that we waste much of it.",
+    author: "Seneca"
+  },
+  {
+    quote: "A hero is born among a hundred, a wise man is found among a thousand, but an accomplished one might not be found even among a hundred thousand men.",
+    author: "Plato"
+  },
+  {
+    quote: "The only true wisdom is in knowing you know nothing.",
+    author: "Socrates"
+  },
+  {
+    quote: "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+    author: "Aristotle"
+  },
+  {
+    quote: "I am not afraid of an army of lions led by a sheep; I am afraid of an army of sheep led by a lion.",
+    author: "Alexander the Great"
+  },
+  {
+    quote: "Fortune favors the brave.",
+    author: "Virgil"
+  },
+  {
+    quote: "There is nothing impossible to him who will try.",
+    author: "Alexander the Great"
+  },
+  {
+    quote: "Be ashamed to die until you have done some good deed for humanity.",
+    author: "Horace"
+  },
+  {
+    quote: "The only way to do great work is to love what you do.",
+    author: "Aristotle"
+  },
+  {
+    quote: "It is not in the stars to hold our destiny but in ourselves.",
+    author: "William Shakespeare"
+  },
+  {
+    quote: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
+    author: "Ralph Waldo Emerson"
+  },
+  {
+    quote: "We are all in the gutter, but some of us are looking at the stars.",
+    author: "Oscar Wilde"
+  },
+  {
+    quote: "The greatest wealth is to live content with little.",
+    author: "Plato"
+  },
+  {
+    quote: "Without labor nothing prospers.",
+    author: "Sophocles"
+  },
+  {
+    quote: "The mind is everything; what you think, you become.",
+    author: "Buddha"
+  },
+  {
+    quote: "Life is like a play: it's not the length, but the excellence of the acting that matters.",
+    author: "Seneca"
+  },
+  {
+    quote: "Man is not affected by events, but by the view he takes of them.",
+    author: "Epictetus"
+  },
+  {
+    quote: "Do not waste what remains of your life in thinking about your neighbors, unless your thinking ends up helping you both.",
+    author: "Marcus Aurelius"
+  },
+  {
+    quote: "He who has a why to live can bear almost any how.",
+    author: "Friedrich Nietzsche (inspired by the Stoics)"
+  },
+  {
+    quote: "The first rule is to keep an untroubled spirit. The second is to look things in the face and know them for what they are.",
+    author: "Marcus Aurelius"
+  },
+  {
+    quote: "The whole future lies in uncertainty: live immediately.",
+    author: "Seneca"
+  },
+  {
+    quote: "Wealth consists not in having great possessions, but in having few wants.",
+    author: "Epictetus"
+  },
+  {
+    quote: "I am not born Roman, a Latin, or anyone thing; the whole world is my native land.",
+    author: "Seneca"
+  },
+  {
+    quote: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
+    author: "Ralph Waldo Emerson (inspired by the Stoics)"
+  },
+  {
+    quote: "What need is there to weep over parts of life? The whole of it calls for tears.",
+    author: "Seneca"
+  },
+  {
+    quote: "It is not death that a man should fear, but he should fear never beginning to live.",
+    author: "Marcus Aurelius"
+  },
+  {
+    quote: "The happiness of your life depends upon the quality of your thoughts.",
+    author: "Marcus Aurelius"
+  },
+  {
+    quote: "We must not be governed by appearances, but by the truth.",
+    author: "Seneca"
+  },
+  {
+    quote: "He is a wise man who does not grieve for the things which he has not, but rejoices for those which he has.",
+    author: "Epictetus"
+  },
+  {
+    quote: "Difficulties strengthen the mind, as labor does the body.",
+    author: "Seneca"
+  },
+  {
+    quote: "Death smiles at us all; all we can do is smile back.",
+    author: "Marcus Aurelius"
+  },
+  {
+    quote: "The greater the difficulty, the more joy in surmounting it.",
+    author: "Epictetus"
+  },
+  {
+    quote: "Knowing others is wisdom, knowing yourself is enlightenment.",
+    author: "Lao Tzu"
+  },
+  {
+    quote: "The journey of a thousand miles begins with one step.",
+    author: "Lao Tzu"
+  },
+  {
+    quote: "When anger rises, think of the consequences.",
+    author: "Confucius"
+  },
+  {
+    quote: "The superior man is modest in his speech, but exceeds in his actions.",
+    author: "Confucius"
+  },
+  {
+    quote: "It does not matter how slowly you go as long as you do not stop.",
+    author: "Confucius"
+  },
+  {
+    quote: "Life is a journey, not a destination.",
+    author: "Lao Tzu"
+  },
+  {
+    quote: "A jug fills drop by drop.",
+    author: "Buddha"
+  },
+  {
+    quote: "The only real failure in life is not to be true to the best one knows.",
+    author: "Buddha"
+  },
+  {
+    quote: "The mind is everything. What you think you become.",
+    author: "Buddha"
+  },
+  {
+    quote: "The tongue like a sharp knife... Kills without drawing blood.",
+    author: "Buddha"
+  },
+  {
+    quote: "If you want to change the world, change yourself.",
+    author: "Mahatma Gandhi"
+  },
+  {
+    quote: "Happiness is not something ready-made. It comes from your own actions.",
+    author: "Dalai Lama"
+  },
+  {
+    quote: "Those who are quick to judge are often those most afraid of being judged.",
+    author: "Albert Camus"
+  }
+
+
+
+
+
+];
+    </script>
+
+</head>
+
+
+
+<body class="p-3 mb-2 bg-info text-white">
+
+      <div class="container , col-md-6">
+        <div class="card , card text-center">
+          <wrapper id="quote-box" class="position-relative">
+          <div class="card-header bg-success">
+            Quote
+          </div>
+          <div class="card-body bg-secondary">
+            <blockquote class="blockquote mb-0">
+              
+              <p id="text"></p>
+              <footer class="blockquote-footer text-white" id="author"></footer>
+
+              <button id="new-quote" onClick="getMeAQuoteMate();" class="btn btn-warning">New Quote</button>
+              <a id="tweet-quote" href="" target="_blank" class="btn btn-primary">Viber Quote</a>
+
+            </blockquote>
+          </div>
+          </wrapper>
+        </div>
+      </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+</body>
+
+
+</html>
