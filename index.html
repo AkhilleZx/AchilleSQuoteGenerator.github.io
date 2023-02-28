@@ -10,7 +10,7 @@
         <script> //marked function
             
             function updatePreview() {
-                document.getElementById("preview").innerHTML = marked.parse(document.getElementById("editor").value);
+                document.getElementById("preview").innerHTML = marked(document.getElementById("editor").value);
             }
 
             // (H1 size), a sub header (H2 size), a link, inline code, 
@@ -52,7 +52,7 @@ I am a big fan of passing all the tests, thus I added the  carriage return!
                 let editor = document.getElementById("editor");
                 let preview = document.getElementById("preview");
                 editor.value = initialText;
-                preview.innerHTML = marked.parse(initialText, { breaks: true });
+                preview.innerHTML = marked(initialText, { breaks: true });
                 }
 
         </script>
